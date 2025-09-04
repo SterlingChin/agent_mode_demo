@@ -1,0 +1,1564 @@
+{
+	"info": {
+		"_postman_id": "19819339-e1bf0a3d-aead-4d0d-ac72-d9fa94d12569",
+		"name": "E-Commerce",
+		"description": "A comprehensive API for managing products, categories, and inventory in an e-commerce platform.\nThis API provides essential functionality for product catalog management.\n\n\nContact Support:\n Name: Product Team\n Email: product-team@company.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "{productId}",
+					"item": [
+						{
+							"name": "Get product by ID",
+							"id": "19819339-592f94c5-46a2-4115-958a-148095deb865",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"id": "74ffe854-9137-459a-bf73-2a2c52446294",
+											"key": "productId",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a",
+											"description": "(Required) The product ID"
+										}
+									]
+								},
+								"description": "Retrieve a specific product by its ID"
+							},
+							"response": [
+								{
+									"id": "19819339-96083c94-fafd-4859-8db1-677196557013",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"8ebd53f3-4944-d52e-5573-64d109dca8f0\",\n  \"sku\": \"string\",\n  \"name\": \"string\",\n  \"price\": 5151.018921437838,\n  \"category_id\": \"5c3ea0d4-f7e3-c7f7-24f8-6209930c514e\",\n  \"status\": \"active\",\n  \"description\": \"string\",\n  \"created_at\": \"2012-09-24T15:04:08.613Z\",\n  \"updated_at\": \"1950-03-03T12:51:34.491Z\",\n  \"images\": [\n    \"http://KpFlahoKHPYdwMiGFeLAXTGTjT.kuPkW7AO,2.jqDcf9aUJyhB650fgDu.mKOz9FL8fnCtfzYDNjN3p5pgxmm.wmmfkjoA-tlko.2\",\n    \"https://SZcFoCWEeoHrtdNPjPPhmOJAkagVlP.crW-ENK1-HACjcOk1KCbZO.bGvFv\"\n  ],\n  \"attributes\": {\n    \"key_0\": 6307.615371659043,\n    \"key_1\": \"string\"\n  }\n}"
+								},
+								{
+									"id": "19819339-56f4b41b-06e0-44a3-a235-487242113e51",
+									"name": "Product not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a product",
+							"id": "19819339-eeeac371-c3a1-408a-b01f-d288ade73ce5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 6605.3391837952495,\n  \"category_id\": \"8dabecf9-bb1a-748d-042d-e87a67f13092\",\n  \"status\": \"discontinued\",\n  \"images\": [\n    \"http://zUYtXyIiUHikPnbLWAXyhejbTnnBCnQO.xyvtEzfGdIvPQwsXtwCJwaWwFTknFx.zCSo9+q0mQ-Xv.-jeHn\",\n    \"https://hKU.eswVtqTPtGd.8r7TvH+aKGHjkAyhCiCPeO\"\n  ],\n  \"attributes\": {\n    \"key_0\": 9650.847899944734,\n    \"key_1\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"id": "388af623-a6ef-41e9-80c6-091ab30f56ad",
+											"key": "productId",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a",
+											"description": "(Required) The product ID"
+										}
+									]
+								},
+								"description": "Update an existing product"
+							},
+							"response": [
+								{
+									"id": "19819339-555d1310-3a51-4503-9a4c-3d8bf9d0c5cb",
+									"name": "Product updated successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 6605.3391837952495,\n  \"category_id\": \"8dabecf9-bb1a-748d-042d-e87a67f13092\",\n  \"status\": \"discontinued\",\n  \"images\": [\n    \"http://zUYtXyIiUHikPnbLWAXyhejbTnnBCnQO.xyvtEzfGdIvPQwsXtwCJwaWwFTknFx.zCSo9+q0mQ-Xv.-jeHn\",\n    \"https://hKU.eswVtqTPtGd.8r7TvH+aKGHjkAyhCiCPeO\"\n  ],\n  \"attributes\": {\n    \"key_0\": 9650.847899944734,\n    \"key_1\": false\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"8ebd53f3-4944-d52e-5573-64d109dca8f0\",\n  \"sku\": \"string\",\n  \"name\": \"string\",\n  \"price\": 5151.018921437838,\n  \"category_id\": \"5c3ea0d4-f7e3-c7f7-24f8-6209930c514e\",\n  \"status\": \"active\",\n  \"description\": \"string\",\n  \"created_at\": \"2012-09-24T15:04:08.613Z\",\n  \"updated_at\": \"1950-03-03T12:51:34.491Z\",\n  \"images\": [\n    \"http://KpFlahoKHPYdwMiGFeLAXTGTjT.kuPkW7AO,2.jqDcf9aUJyhB650fgDu.mKOz9FL8fnCtfzYDNjN3p5pgxmm.wmmfkjoA-tlko.2\",\n    \"https://SZcFoCWEeoHrtdNPjPPhmOJAkagVlP.crW-ENK1-HACjcOk1KCbZO.bGvFv\"\n  ],\n  \"attributes\": {\n    \"key_0\": 6307.615371659043,\n    \"key_1\": \"string\"\n  }\n}"
+								},
+								{
+									"id": "19819339-b1dc4583-83d9-4182-8717-18f2902b0323",
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 6605.3391837952495,\n  \"category_id\": \"8dabecf9-bb1a-748d-042d-e87a67f13092\",\n  \"status\": \"discontinued\",\n  \"images\": [\n    \"http://zUYtXyIiUHikPnbLWAXyhejbTnnBCnQO.xyvtEzfGdIvPQwsXtwCJwaWwFTknFx.zCSo9+q0mQ-Xv.-jeHn\",\n    \"https://hKU.eswVtqTPtGd.8r7TvH+aKGHjkAyhCiCPeO\"\n  ],\n  \"attributes\": {\n    \"key_0\": 9650.847899944734,\n    \"key_1\": false\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+								},
+								{
+									"id": "19819339-4729e20d-b426-4251-b212-d170a70fe460",
+									"name": "Product not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"price\": 6605.3391837952495,\n  \"category_id\": \"8dabecf9-bb1a-748d-042d-e87a67f13092\",\n  \"status\": \"discontinued\",\n  \"images\": [\n    \"http://zUYtXyIiUHikPnbLWAXyhejbTnnBCnQO.xyvtEzfGdIvPQwsXtwCJwaWwFTknFx.zCSo9+q0mQ-Xv.-jeHn\",\n    \"https://hKU.eswVtqTPtGd.8r7TvH+aKGHjkAyhCiCPeO\"\n  ],\n  \"attributes\": {\n    \"key_0\": 9650.847899944734,\n    \"key_1\": false\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a product",
+							"id": "19819339-98875347-e056-4ad5-8516-c92d21d655bb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"id": "51594ca9-3103-4a42-a741-24b033f90da9",
+											"key": "productId",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a",
+											"description": "(Required) The product ID"
+										}
+									]
+								},
+								"description": "Delete a product from the catalog"
+							},
+							"response": [
+								{
+									"id": "19819339-99ad3e0d-c518-48bf-ba71-7e3ff884ed5e",
+									"name": "Product deleted successfully",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": null
+								},
+								{
+									"id": "19819339-1787c74f-7efa-447a-a127-429f1b7d63be",
+									"name": "Product not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+								}
+							]
+						}
+					],
+					"id": "19819339-041bc30c-ba68-4d52-91e0-94dfe5f6b673"
+				},
+				{
+					"name": "List all products",
+					"id": "19819339-3819325d-90fe-4dea-883f-4740ce6ab303",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products?page=1&limit=20&category_id=58cd1eb8-7d81-1218-1a5e-e1b965587b3a&status=discontinued",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"description": "Page number for pagination",
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"description": "Number of items per page",
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"description": "Filter by category ID",
+									"key": "category_id",
+									"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a"
+								},
+								{
+									"description": "Filter by product status",
+									"key": "status",
+									"value": "discontinued"
+								}
+							]
+						},
+						"description": "Retrieve a paginated list of all products with optional filtering"
+					},
+					"response": [
+						{
+							"id": "19819339-5a2e96a3-59de-41ee-891d-941eb43011fc",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?page=1&limit=20&category_id=58cd1eb8-7d81-1218-1a5e-e1b965587b3a&status=discontinued",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"description": "Page number for pagination",
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"description": "Number of items per page",
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"description": "Filter by category ID",
+											"key": "category_id",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a"
+										},
+										{
+											"description": "Filter by product status",
+											"key": "status",
+											"value": "discontinued"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"713ec8ef-227a-c7e5-fe10-43fc302d57d5\",\n      \"sku\": \"string\",\n      \"name\": \"string\",\n      \"price\": 1478.0589489121421,\n      \"category_id\": \"c67253ef-b668-d08f-1975-85cb8e6c81b7\",\n      \"status\": \"discontinued\",\n      \"description\": \"string\",\n      \"created_at\": \"2014-09-17T09:22:14.147Z\",\n      \"updated_at\": \"1988-01-22T19:30:29.603Z\",\n      \"images\": [\n        \"http://vMpRrRUsKEslyRnODnVXsBglpCaPkuyeR.vmmO.9rmXa6p+Q4HdzrjdeaAdYHE8F+3ypt0pdm2CkILRIH7RDxR08BuzIv\",\n        \"http://PxxSoXIVBtmocNgqeeBe.epH32BmC-Fhe82j0ZXg\"\n      ],\n      \"attributes\": {\n        \"key_0\": false,\n        \"key_1\": 4786.598054392243\n      }\n    },\n    {\n      \"id\": \"5f055ebd-11ed-4360-df1d-172ce73c77fa\",\n      \"sku\": \"string\",\n      \"name\": \"string\",\n      \"price\": 7009.476514737905,\n      \"category_id\": \"6b3e419a-bcf5-00db-4c6c-7ab940ab1990\",\n      \"status\": \"inactive\",\n      \"description\": \"string\",\n      \"created_at\": \"2020-03-05T00:53:07.430Z\",\n      \"updated_at\": \"1957-07-08T13:28:05.191Z\",\n      \"images\": [\n        \"https://mzHOUKlXMSVwvwaVTsuZoVyXrXGU.hbiH3NtIa7s6BZ9m,0nqBOMhxtXGV8WYK6bCdAK2ImEaDmCDPbwpvGIvpAO18+8XGzlk1X0lQ3IPeB6n2kC\",\n        \"https://NLoVwPmuLT.zmELHdXvDLyXkXeDBE49udPi08xVk54Glfeyltz1Rm+VxjX-.S9EqqK.rVqg31eKi3Y8qov\"\n      ],\n      \"attributes\": {\n        \"key_0\": \"string\"\n      }\n    }\n  ],\n  \"pagination\": {\n    \"page\": 3588,\n    \"limit\": 776,\n    \"total_pages\": 8731,\n    \"total_items\": 943\n  }\n}"
+						},
+						{
+							"id": "19819339-539adf7e-a085-4f5a-b62f-a2ab38d4bcf7",
+							"name": "Bad request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?page=1&limit=20&category_id=58cd1eb8-7d81-1218-1a5e-e1b965587b3a&status=discontinued",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"description": "Page number for pagination",
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"description": "Number of items per page",
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"description": "Filter by category ID",
+											"key": "category_id",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a"
+										},
+										{
+											"description": "Filter by product status",
+											"key": "status",
+											"value": "discontinued"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+						},
+						{
+							"id": "19819339-b860fcc0-9404-4dfa-ab5c-0a35ed691e16",
+							"name": "Internal server error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?page=1&limit=20&category_id=58cd1eb8-7d81-1218-1a5e-e1b965587b3a&status=discontinued",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"description": "Page number for pagination",
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"description": "Number of items per page",
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"description": "Filter by category ID",
+											"key": "category_id",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a"
+										},
+										{
+											"description": "Filter by product status",
+											"key": "status",
+											"value": "discontinued"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new product",
+					"id": "19819339-8db276a6-ddb7-41aa-834f-a6dddbb7f182",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sku\": \"string\",\n  \"name\": \"string\",\n  \"price\": 6453.392291125084,\n  \"category_id\": \"5442b536-4b85-3e23-d3f4-5ed183f4e522\",\n  \"description\": \"string\",\n  \"status\": \"active\",\n  \"images\": [\n    \"https://dNVVwDrmsiBTTvF.evixiaDlD0X.bLRMaTnuVhIPoz5W3nla8qMWXk1AMZ9zgUt7Pel\",\n    \"http://NfZezedAYYNxWqwTgLRT.afszCB2O4BpLaAh-QNVk2YdKybcwnTYH7wvL4qBENLHidjqf5qrRqyglBiyCLk\"\n  ],\n  \"attributes\": {\n    \"key_0\": true,\n    \"key_1\": false\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							]
+						},
+						"description": "Create a new product in the catalog"
+					},
+					"response": [
+						{
+							"id": "19819339-27ef5eaa-eb4b-440f-ae19-b2142ee2bdfd",
+							"name": "Product created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"sku\": \"string\",\n  \"name\": \"string\",\n  \"price\": 6453.392291125084,\n  \"category_id\": \"5442b536-4b85-3e23-d3f4-5ed183f4e522\",\n  \"description\": \"string\",\n  \"status\": \"active\",\n  \"images\": [\n    \"https://dNVVwDrmsiBTTvF.evixiaDlD0X.bLRMaTnuVhIPoz5W3nla8qMWXk1AMZ9zgUt7Pel\",\n    \"http://NfZezedAYYNxWqwTgLRT.afszCB2O4BpLaAh-QNVk2YdKybcwnTYH7wvL4qBENLHidjqf5qrRqyglBiyCLk\"\n  ],\n  \"attributes\": {\n    \"key_0\": true,\n    \"key_1\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"8ebd53f3-4944-d52e-5573-64d109dca8f0\",\n  \"sku\": \"string\",\n  \"name\": \"string\",\n  \"price\": 5151.018921437838,\n  \"category_id\": \"5c3ea0d4-f7e3-c7f7-24f8-6209930c514e\",\n  \"status\": \"active\",\n  \"description\": \"string\",\n  \"created_at\": \"2012-09-24T15:04:08.613Z\",\n  \"updated_at\": \"1950-03-03T12:51:34.491Z\",\n  \"images\": [\n    \"http://KpFlahoKHPYdwMiGFeLAXTGTjT.kuPkW7AO,2.jqDcf9aUJyhB650fgDu.mKOz9FL8fnCtfzYDNjN3p5pgxmm.wmmfkjoA-tlko.2\",\n    \"https://SZcFoCWEeoHrtdNPjPPhmOJAkagVlP.crW-ENK1-HACjcOk1KCbZO.bGvFv\"\n  ],\n  \"attributes\": {\n    \"key_0\": 6307.615371659043,\n    \"key_1\": \"string\"\n  }\n}"
+						},
+						{
+							"id": "19819339-e950881c-62ce-4567-bcc4-d3564a4f7cbe",
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"sku\": \"string\",\n  \"name\": \"string\",\n  \"price\": 6453.392291125084,\n  \"category_id\": \"5442b536-4b85-3e23-d3f4-5ed183f4e522\",\n  \"description\": \"string\",\n  \"status\": \"active\",\n  \"images\": [\n    \"https://dNVVwDrmsiBTTvF.evixiaDlD0X.bLRMaTnuVhIPoz5W3nla8qMWXk1AMZ9zgUt7Pel\",\n    \"http://NfZezedAYYNxWqwTgLRT.afszCB2O4BpLaAh-QNVk2YdKybcwnTYH7wvL4qBENLHidjqf5qrRqyglBiyCLk\"\n  ],\n  \"attributes\": {\n    \"key_0\": true,\n    \"key_1\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+						},
+						{
+							"id": "19819339-6bb8f423-1407-461c-b84f-997cc5262b9e",
+							"name": "Product with SKU already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"sku\": \"string\",\n  \"name\": \"string\",\n  \"price\": 6453.392291125084,\n  \"category_id\": \"5442b536-4b85-3e23-d3f4-5ed183f4e522\",\n  \"description\": \"string\",\n  \"status\": \"active\",\n  \"images\": [\n    \"https://dNVVwDrmsiBTTvF.evixiaDlD0X.bLRMaTnuVhIPoz5W3nla8qMWXk1AMZ9zgUt7Pel\",\n    \"http://NfZezedAYYNxWqwTgLRT.afszCB2O4BpLaAh-QNVk2YdKybcwnTYH7wvL4qBENLHidjqf5qrRqyglBiyCLk\"\n  ],\n  \"attributes\": {\n    \"key_0\": true,\n    \"key_1\": false\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "19819339-667520dd-5aaa-4b24-8030-0b268ffbd79b"
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "{categoryId}",
+					"item": [
+						{
+							"name": "Get category by ID",
+							"id": "19819339-bcdb6d35-38be-4cb1-8208-93b5432e12a0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories/:categoryId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"id": "4d1e1ea7-c5b8-47b6-9b42-012cbcdf38c1",
+											"key": "categoryId",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a",
+											"description": "(Required) The category ID"
+										}
+									]
+								},
+								"description": "Retrieve a specific category by its ID"
+							},
+							"response": [
+								{
+									"id": "19819339-0ed23220-1fcd-4a69-bf3f-5bf52aa3391a",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"id\": \"916a4d0d-fb1e-793e-17fe-b7c264b26a80\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"parent_id\": \"32e83b2a-b616-2d00-98fc-3203025c0629\",\n  \"created_at\": \"1966-07-16T04:08:54.382Z\",\n  \"updated_at\": \"1966-06-26T06:57:53.721Z\"\n}"
+								},
+								{
+									"id": "19819339-acb89fed-105f-4496-bd32-d8d2a55fcc06",
+									"name": "Category not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:categoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":categoryId"
+											],
+											"variable": [
+												{
+													"key": "categoryId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+								}
+							]
+						}
+					],
+					"id": "19819339-06dfe961-2e80-406a-8101-b3efdaa4f9e9"
+				},
+				{
+					"name": "List all categories",
+					"id": "19819339-009c1bf4-6633-4fc7-83fb-f17a8ee37465",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						},
+						"description": "Retrieve all product categories"
+					},
+					"response": [
+						{
+							"id": "19819339-12909e88-7d14-4294-b817-60b99e62c800",
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-Key",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"data\": [\n    {\n      \"id\": \"46536647-c960-3340-9d63-00321dea4cea\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"parent_id\": \"328ed410-6f8a-761e-711f-0386fb1d223b\",\n      \"created_at\": \"2000-11-30T18:04:46.767Z\",\n      \"updated_at\": \"1980-05-01T11:48:34.489Z\"\n    },\n    {\n      \"id\": \"a321feb1-4d37-a68d-c733-1dea3f7829c4\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"parent_id\": \"e4e5115a-ddb8-56cb-aa95-6ec15204ce2b\",\n      \"created_at\": \"2020-12-31T09:00:39.898Z\",\n      \"updated_at\": \"1996-02-05T20:14:51.111Z\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new category",
+					"id": "19819339-32c9c816-e135-4d30-b811-e6764cf1cca6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"parent_id\": \"5170c140-16ea-9469-777f-530ced330e8f\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						},
+						"description": "Create a new product category"
+					},
+					"response": [
+						{
+							"id": "19819339-dfa1ced1-a72f-4bb9-a8fa-f8815cc2b9f0",
+							"name": "Category created successfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "X-API-Key",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"parent_id\": \"5170c140-16ea-9469-777f-530ced330e8f\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"id\": \"916a4d0d-fb1e-793e-17fe-b7c264b26a80\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"parent_id\": \"32e83b2a-b616-2d00-98fc-3203025c0629\",\n  \"created_at\": \"1966-07-16T04:08:54.382Z\",\n  \"updated_at\": \"1966-06-26T06:57:53.721Z\"\n}"
+						}
+					]
+				}
+			],
+			"id": "19819339-c99f3bf1-4eb2-476b-94a3-ff9a570cb38b"
+		},
+		{
+			"name": "inventory",
+			"item": [
+				{
+					"name": "{productId}",
+					"item": [
+						{
+							"name": "Get inventory for a product",
+							"id": "19819339-aa04d2fe-fd06-4969-aa77-4100c6c96889",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/inventory/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory",
+										":productId"
+									],
+									"variable": [
+										{
+											"id": "6d246d9d-cdf6-4b88-8e31-887425a30beb",
+											"key": "productId",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a",
+											"description": "(Required) The product ID"
+										}
+									]
+								},
+								"description": "Retrieve current inventory levels for a specific product"
+							},
+							"response": [
+								{
+									"id": "19819339-baf002bf-f609-4f55-8b25-4f3295ead443",
+									"name": "Successful response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/inventory/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"product_id\": \"18a15dbd-3ecb-4021-bc88-65a5103b22e9\",\n  \"quantity_available\": 5403,\n  \"quantity_reserved\": 5763,\n  \"reorder_level\": 7410,\n  \"last_updated\": \"2009-09-26T07:02:22.891Z\"\n}"
+								},
+								{
+									"id": "19819339-20b265a8-961b-47d8-9afa-83aea26a1c46",
+									"name": "Product not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/inventory/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update inventory",
+							"id": "19819339-a7363259-87f9-4127-aa89-d5eef17b52eb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"quantity_available\": 800,\n  \"quantity_reserved\": 8589,\n  \"reorder_level\": 6234\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/inventory/:productId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory",
+										":productId"
+									],
+									"variable": [
+										{
+											"id": "de96871b-f608-4ed3-a103-45eb9c6b68c7",
+											"key": "productId",
+											"value": "58cd1eb8-7d81-1218-1a5e-e1b965587b3a",
+											"description": "(Required) The product ID"
+										}
+									]
+								},
+								"description": "Update inventory levels for a specific product"
+							},
+							"response": [
+								{
+									"id": "19819339-ca06eb1f-f1d4-4b2c-823a-ac0e55e95a31",
+									"name": "Inventory updated successfully",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity_available\": 800,\n  \"quantity_reserved\": 8589,\n  \"reorder_level\": 6234\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/inventory/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"product_id\": \"18a15dbd-3ecb-4021-bc88-65a5103b22e9\",\n  \"quantity_available\": 5403,\n  \"quantity_reserved\": 5763,\n  \"reorder_level\": 7410,\n  \"last_updated\": \"2009-09-26T07:02:22.891Z\"\n}"
+								},
+								{
+									"id": "19819339-67bff397-c86e-4507-9876-9b2a08a0d5a7",
+									"name": "Product not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "X-API-Key",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity_available\": 800,\n  \"quantity_reserved\": 8589,\n  \"reorder_level\": 6234\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/inventory/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"inventory",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"error\": \"string\",\n  \"code\": \"string\",\n  \"details\": {\n    \"key_0\": 9738.281733437692,\n    \"key_1\": false,\n    \"key_2\": 8937\n  }\n}"
+								}
+							]
+						}
+					],
+					"id": "19819339-aa9c9da4-e397-42f4-9668-3518be1a60e1"
+				}
+			],
+			"id": "19819339-d8afc6b4-9077-451b-bbf3-5d6f1a4e959b"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.ecommerce.company.com/v1"
+		}
+	]
+}
