@@ -1633,7 +1633,105 @@
 		},
 		{
 			"name": "recommendations",
-			"item": [],
+			"item": [
+				{
+					"name": "Get product recommendations",
+					"id": "19819339-39321dbc-b71d-4787-aa6d-281ce16df425",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products/{{productId}}/recommendations?limit=10&algorithm=hybrid&user_id={{userId}}&include_out_of_stock=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"{{productId}}",
+								"recommendations"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "algorithm",
+									"value": "hybrid"
+								},
+								{
+									"key": "user_id",
+									"value": "{{userId}}"
+								},
+								{
+									"key": "include_out_of_stock",
+									"value": "false"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"{{baseUrl}}/products/{{productId}}/recommendations?limit=10&algorithm=hybrid&user_id={{userId}}&include_out_of_stock=false\" -H \"X-API-Key: {{apiKey}}\" -H \"Accept: application/json\""
+					},
+					"response": []
+				},
+				{
+					"name": "Get bulk product recommendations",
+					"id": "19819339-161345b0-fa9f-468e-b033-dcb48dee2109",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"product_ids\": [\n    \"{{productId}}\",\n    \"58cd1eb8-7d81-1218-1a5e-e1b965587b3a\"\n  ],\n  \"limit_per_product\": 5,\n  \"algorithm\": \"hybrid\",\n  \"user_id\": \"{{userId}}\",\n  \"include_out_of_stock\": false,\n  \"common_filters\": {\n    \"price_range\": {\n      \"min\": 10.00,\n      \"max\": 500.00\n    },\n    \"exclude_product_ids\": []\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/recommendations/bulk",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"recommendations",
+								"bulk"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"{{baseUrl}}/products/recommendations/bulk\" -H \"X-API-Key: {{apiKey}}\" -H \"Content-Type: application/json\" -H \"Accept: application/json\" -d '{\n  \"product_ids\": [\n    \"{{productId}}\",\n    \"58cd1eb8-7d81-1218-1a5e-e1b965587b3a\"\n  ],\n  \"limit_per_product\": 5,\n  \"algorithm\": \"hybrid\",\n  \"user_id\": \"{{userId}}\",\n  \"include_out_of_stock\": false,\n  \"common_filters\": {\n    \"price_range\": {\n      \"min\": 10.00,\n      \"max\": 500.00\n    },\n    \"exclude_product_ids\": []\n  }\n}'"
+					},
+					"response": []
+				}
+			],
 			"id": "19819339-9329f853-25a8-45d5-b791-f6f1f3550d06"
 		}
 	],
