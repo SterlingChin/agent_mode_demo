@@ -1949,6 +1949,52 @@
 						"description": "Generated from cURL: curl -X GET \"{{baseUrl}}/products/{{productId}}/recommendations?limit=10&algorithm=hybrid&user_id={{userId}}&include_out_of_stock=false\" -H \"X-API-Key: {{apiKey}}\" -H \"Accept: application/json\""
 					},
 					"response": []
+				},
+				{
+					"name": "Get bulk product recommendations",
+					"id": "19819339-a047d671-1558-416b-be54-a268a1bd629b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"product_ids\": [\"{{productId}}\", \"550e8400-e29b-41d4-a716-446655440001\"],\n  \"limit_per_product\": 5,\n  \"algorithm\": \"hybrid\",\n  \"user_id\": \"{{userId}}\",\n  \"include_out_of_stock\": false,\n  \"common_filters\": {\n    \"price_range\": {\n      \"min\": 10.00,\n      \"max\": 500.00\n    },\n    \"category_ids\": [\"550e8400-e29b-41d4-a716-446655440002\"]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/recommendations/bulk",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"recommendations",
+								"bulk"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"{{baseUrl}}/products/recommendations/bulk\" -H \"X-API-Key: {{apiKey}}\" -H \"Content-Type: application/json\" -H \"Accept: application/json\" -d '{\n  \"product_ids\": [\"{{productId}}\", \"550e8400-e29b-41d4-a716-446655440001\"],\n  \"limit_per_product\": 5,\n  \"algorithm\": \"hybrid\",\n  \"user_id\": \"{{userId}}\",\n  \"include_out_of_stock\": false,\n  \"common_filters\": {\n    \"price_range\": {\n      \"min\": 10.00,\n      \"max\": 500.00\n    },\n    \"category_ids\": [\"550e8400-e29b-41d4-a716-446655440002\"]\n  }\n}'"
+					},
+					"response": []
 				}
 			],
 			"id": "19819339-9329f853-25a8-45d5-b791-f6f1f3550d06"
